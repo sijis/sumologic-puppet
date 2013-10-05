@@ -72,6 +72,10 @@ class sumologic::client (
 
     service { 'collector':
         ensure => running,
+        enable     => true,
+        hasstatus  => true,
+        hasrestart => true,
+        require    => Package['SumoCollector'],
     }
 
 }
