@@ -35,17 +35,17 @@
 #
 #
 class sumologic::client (
-    $source   = hiera('sumologic_client_source'),
-    $template = hiera('sumologic_client_template'),
-    $version  = hiera('sumologic_client_version')
+    $source   = 'sumologic/sumo.conf',
+    $template = undef,
+    $version  = 'installed',
 ){
 
     if $source {
-        $sumo_source  = "puppet:///modules/sumologic/${source}"
+        $sumo_source  = "puppet:///modules/${source}"
         $sumo_content = undef
     } else {
         $sumo_source  = undef
-        $sumo_content = template("sumologic/${template}")
+        $sumo_content = template("${template}")
     }
 
     File {
