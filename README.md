@@ -26,3 +26,9 @@ class { 'sumologic::client':
 }
 
 ```
+
+Tested
+============
+
+This module has been tested againt 64-bit CentOS 5.x/6.x servers.
+I would suspect it should work again RHEl and compatible systems with minimal changes.
