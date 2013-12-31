@@ -35,8 +35,8 @@
 #
 #
 class sumologic::client (
-    $source   = 'sumologic/sumo.conf',
-    $template = undef,
+    $source   = undef,
+    $template = 'sumologic/sumo.conf.erb',
     $version  = 'installed',
 ){
 
@@ -71,7 +71,7 @@ class sumologic::client (
     }
 
     service { 'collector':
-        ensure => running,
+        ensure     => running,
         enable     => true,
         hasstatus  => true,
         hasrestart => true,
